@@ -2,32 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+    /* --s: 50px;
+    --c: #0000 75%, #eee5b57c 0;
+    --g1: conic-gradient(at 78% 3%, var(--c));
+    --g2: conic-gradient(at 3% 78%, var(--c));
+    background: var(--g1), var(--g1) var(--s) var(--s),
+        var(--g1) calc(2 * var(--s)) calc(2 * var(--s)),
+        var(--g1) calc(3 * var(--s)) calc(3 * var(--s)),
+        var(--g2) 0 calc(3 * var(--s)), var(--g2) var(--s) 0,
+        var(--g2) calc(2 * var(--s)) var(--s),
+        var(--g2) calc(3 * var(--s)) calc(2 * var(--s)) #966f33;
+    background-size: calc(4 * var(--s)) calc(4 * var(--s)); */
+
+    background-color: #302406;
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* From https://css.glass */
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.52);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
