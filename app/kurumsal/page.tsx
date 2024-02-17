@@ -1,22 +1,27 @@
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { HiCheckCircle } from "react-icons/hi2";
+import { BiSolidBinoculars } from "react-icons/bi";
+import { PiTargetBold, PiBinocularsFill } from "react-icons/pi";
 import Image from "next/image";
 
 const Kurumsal = () => {
     return (
         <main className="mt-4 flex flex-col sm:max-w-screen-xl sm:mx-auto gap-y-8 p-1 sm:p-5">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center bg-white/70 text-[#000] py-4 backdrop-blur-lg shadow-md rounded-lg">
-                Neden Elbar?
+            <h2 className="text-3xl sm:text-4xl font-bold text-center bg-white/70 text-[#271810] py-4 backdrop-blur-lg shadow-md rounded-lg">
+                NEDEN ELBAR?
             </h2>
 
-            <div className="absolute h-full border-[4px]  rounded-full bg-white/70 backdrop-blur-lg opacity-45 shadow-md right-1/2 -translate-x-1/2 -z-40" />
             <article
-                className="shadow-md rounded-lg bg-white/70 text-[#000] backdrop-blur-lg 
+                className="shadow-md rounded-lg bg-white/70 text-[#271810] backdrop-blur-lg 
                            flex flex-col gap-y-4  p-4
                         "
             >
                 <h2 className=" text-2xl sm:text-3xl font-bold">Kısaca Biz</h2>
-                <div className="flex flex-col lg:flex-row lg:gap-x-3 gap-y-2  md:gap-y-3 lg:justify-between">
-                    <p className="text-base sm:text-lg drop-shadow-2xl lg:order-3 lg:flex-1  text-pretty">
+                <div
+                    aria-hidden="true"
+                    className="border rounded-full border-black shrink-0"
+                />
+                <div className="flex flex-col lg:flex-row lg:gap-x-3 gap-y-2  md:gap-y-3 lg:justify-between text-wrap">
+                    <p className="text-base sm:text-lg drop-shadow-2xl lg:order-3 lg:flex-1 text-wrap">
                         <span className="font-semibold">1998</span> yılında
                         kiralık makineler ile mobilya sektörü başlayan Elbar
                         Mobilya zamanının şartlarına göre ürettiği kaliteli ürün
@@ -26,22 +31,28 @@ const Kurumsal = () => {
                         CNC ve membran Makinelerini alan Elbar Mobilya 2017
                         yılında makinelerini Tekrar yenileyerek üretimini
                         büyütmeye devam etti. 2020 Yılında membran kapı
-                        üretimine başladı.
+                        üretimine başladı. Bu dönemden itibaren Elbar Mobilya
+                        üretim hayatına aktif bir şekilde devam etmektedir.
                     </p>
 
-                    <div className="hidden lg:block border lg:order-2 border-black rounded-full shrink-0" />
+                    <div
+                        aria-hidden="true"
+                        className="hidden lg:block border lg:order-2 border-black rounded-full shrink-0"
+                    />
 
-                    <ul className="lg:order-1  md:text-lg leading-relaxed lg:flex-1">
-                        <li className="flex flex-row items-center gap-1 text-nowrap">
-                            <CheckCircleIcon className="size-5 sm:size-6 text-blue-600" />{" "}
+                    <ul className="lg:order-1 md:text-lg leading-relaxed lg:flex-1 lg:space-y-3">
+                        <li className="flex flex-row items-center gap-1  ">
+                            <HiCheckCircle className="text-blue-600 size-5 sm:size-6" />
                             Ayda{" "}
-                            <strong className="font-semibold">25.000 m2</strong>{" "}
+                            <strong className="font-semibold inline">
+                                25.000 m2
+                            </strong>{" "}
                             membran kapak,
                             <strong className="font-semibold">200</strong> adet
                             kapı.
                         </li>
-                        <li className="flex flex-row items-center gap-1 text-nowrap">
-                            <CheckCircleIcon className="size-5 sm:size-6 text-blue-600" />{" "}
+                        <li className="flex flex-row items-center gap-1 ">
+                            <HiCheckCircle className="text-blue-600 size-5 sm:size-6" />
                             Yılda{" "}
                             <strong className="font-semibold">
                                 300.000 m2
@@ -58,7 +69,7 @@ const Kurumsal = () => {
                 </strong>
             </article>
 
-            <section className="p-4 shadow-md rounded-lg bg-white/70 text-[#000] backdrop-blur-lg flex flex-row gap-x-5 justify-between">
+            <section className="p-4 shadow-md rounded-lg bg-white/70 text-[#271810] backdrop-blur-lg flex flex-row gap-x-5 justify-between">
                 <Image
                     src="/images/kapak4.jpeg"
                     alt="Misyonumuz Resim"
@@ -67,8 +78,20 @@ const Kurumsal = () => {
                     className="hidden md:block flex-1 h-auto max-h-[400px] w-1/2 rounded-lg object-scale-down object-left"
                 />
 
+                <div
+                    aria-hidden="true"
+                    className="hidden lg:block border  border-black rounded-full shrink-0"
+                />
+
                 <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
-                    <h2 className="text-2xl font-bold ">Misyonumuz</h2>
+                    <h2 className="text-2xl font-bold flex flex-row flex-nowrap items-center gap-1">
+                        Misyonumuz{" "}
+                        <PiTargetBold className="size-7 text-rose-700" />
+                    </h2>
+                    <div
+                        aria-hidden="true"
+                        className="border rounded-full border-black shrink-0"
+                    />
                     <p className="text-lg">
                         Şirketimiz, müşterilerimize en kaliteli ürünleri ve
                         hizmetleri sunarak onların hayatlarını güzelleştirmeyi
@@ -84,9 +107,16 @@ const Kurumsal = () => {
                 </article>
             </section>
 
-            <section className="p-4 shadow-md rounded-lg bg-white/70 text-[#000] backdrop-blur-lg flex flex-row gap-x-5 justify-between">
+            <section className="p-4 shadow-md rounded-lg bg-white/70 text-[#271810] backdrop-blur-lg flex flex-row gap-x-5 justify-between">
                 <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
-                    <h2 className="text-2xl font-bold ">Vizyonumuz</h2>
+                    <h2 className="text-2xl font-bold flex flex-row flex-nowrap items-center gap-1">
+                        Vizyonumuz
+                        <PiBinocularsFill className="size-7 text-indigo-700" />
+                    </h2>
+                    <div
+                        aria-hidden="true"
+                        className="border rounded-full border-black shrink-0"
+                    />
                     <p className="text-lg">
                         En yenilikçi ürünleri ve çözümleri sunarak dünya çapında
                         tanınan lider bir kapı ve kapak markası olarak kalite
@@ -98,6 +128,11 @@ const Kurumsal = () => {
                         amaçlıyoruz.
                     </p>
                 </article>
+
+                <div
+                    aria-hidden="true"
+                    className="hidden lg:block border  border-black rounded-full shrink-0"
+                />
 
                 <Image
                     src="/images/kapak5.jpeg"

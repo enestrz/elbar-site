@@ -19,16 +19,21 @@ const Navigation = () => {
     ];
 
     return (
-        <nav className="bg-[#272727]  rounded-b-md shadow-lg flex flex-row p-4 text-yellow-300 justify-between sm:max-w-screen-xl sm:mx-auto items-center ">
+        <nav
+            className="bg-white/90 backdrop-blur-2xl
+                        rounded-b-md shadow-lg flex flex-row p-4 text-[#271810] 
+                        justify-between sm:max-w-screen-xl sm:mx-auto items-center 
+                        "
+        >
             <h2 className="font-bold text-lg sm:text-xl">Elbar Mobilya</h2>
 
-            <ul className="hidden sm:flex sm:flex-row gap-x-4 *:font-light">
+            <ul className="hidden sm:flex sm:flex-row gap-x-4">
                 <li>
                     <Link
                         href="/"
                         className={`${
                             pathname === "/" ? "font-semibold" : ""
-                        } hover:`}
+                        } nav-link `}
                     >
                         Anasayfa
                     </Link>
@@ -38,7 +43,7 @@ const Navigation = () => {
                         href="/kurumsal"
                         className={`${
                             pathname === "/kurumsal" ? "font-semibold" : ""
-                        }`}
+                        } nav-link`}
                     >
                         Kurumsal
                     </Link>
@@ -48,7 +53,7 @@ const Navigation = () => {
                         href="#"
                         className={`${
                             pathname === "/urunler" ? "font-semibold" : ""
-                        }`}
+                        } nav-link`}
                     >
                         Ürünlerimiz
                     </Link>
@@ -58,7 +63,7 @@ const Navigation = () => {
                         href="#"
                         className={`${
                             pathname === "/medya" ? "font-semibold" : ""
-                        }`}
+                        } nav-link`}
                     >
                         Medya
                     </Link>
@@ -68,7 +73,7 @@ const Navigation = () => {
                         href="#"
                         className={`${
                             pathname === "/iletisim" ? "font-semibold" : ""
-                        }`}
+                        } nav-link`}
                     >
                         İletişim
                     </Link>

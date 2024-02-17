@@ -17,7 +17,7 @@ html {
 
     background-color: #302406;
     /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
-    background-image: url("../public/images/Melamine-wood-005.png");
+    background-image: url("../public/images/Melamine-wood-002.png");
 }
 
 /* From https://css.glass */
@@ -29,4 +29,10 @@ html {
     backdrop-filter: blur(7.6px);
     -webkit-backdrop-filter: blur(7.6px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@layer components {
+    .nav-link {
+        @apply font-normal hover:border-b-2 hover:border-current transition;
+    }
 }
