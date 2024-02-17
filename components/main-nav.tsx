@@ -4,6 +4,8 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { HiMenu } from "react-icons/hi";
+import { CgClose } from "react-icons/cg";
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +29,17 @@ const Navigation = () => {
         >
             <h2 className="font-bold text-lg sm:text-xl">Elbar Mobilya</h2>
 
-            <ul className="hidden sm:flex sm:flex-row gap-x-4">
+            <button
+                aria-describedby="Navbar button for open menu when window size is small"
+                className="appearance-none md:hidden flex flex-row items-center justify-center bg-transparent m-0 p-0 outline-none focus:outline-none"
+            >
+                <HiMenu
+                    aria-hidden="true"
+                    className="size-7"
+                />
+            </button>
+
+            <ul className="hidden md:flex md:flex-row gap-x-4">
                 <li>
                     <Link
                         href="/"
@@ -70,7 +82,7 @@ const Navigation = () => {
                 </li>
                 <li>
                     <Link
-                        href="#"
+                        href="/iletisim"
                         className={`${
                             pathname === "/iletisim" ? "font-semibold" : ""
                         } nav-link`}

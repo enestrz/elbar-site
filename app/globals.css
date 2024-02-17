@@ -35,4 +35,12 @@ html {
     .nav-link {
         @apply font-normal hover:border-b-2 hover:border-current transition;
     }
+
+    .main-container {
+        @apply mt-4 flex flex-col sm:max-w-screen-xl sm:mx-auto gap-y-8;
+    }
+
+    .card {
+        @apply shadow-md rounded-lg bg-white/70 text-[#271810] backdrop-blur-lg;
+    }
 }
