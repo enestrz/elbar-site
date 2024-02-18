@@ -1,17 +1,23 @@
 import { HiCheckCircle } from "react-icons/hi2";
 import { BiSolidBinoculars } from "react-icons/bi";
+import { IoBook } from "react-icons/io5";
+import { GoBook } from "react-icons/go";
 import { PiTargetBold, PiBinocularsFill } from "react-icons/pi";
 import Image from "next/image";
 
 const Kurumsal = () => {
     return (
         <main className="main-container">
+            {/* Neden Elbar? */}
             <h2 className="text-3xl sm:text-4xl font-bold text-center bg-white/70 text-[#271810] py-4 backdrop-blur-lg shadow-md rounded-lg">
                 NEDEN ELBAR?
             </h2>
 
-            <section className="card flex flex-col gap-y-4  p-4">
-                <h2 className=" text-2xl sm:text-3xl font-bold">Kısaca Biz</h2>
+            {/* Kısaca Biz */}
+            <section className="card flex flex-col gap-y-4 p-4">
+                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row items-center gap-x-2">
+                    Kısaca Biz <IoBook className="size-8 text-lime-700" />
+                </h2>
                 <div
                     aria-hidden="true"
                     className="border rounded-full border-black shrink-0"
@@ -75,84 +81,102 @@ const Kurumsal = () => {
                 </strong>
             </section>
 
-            <section className="card p-4 flex flex-row gap-x-5 justify-between">
-                <Image
-                    src="/images/kapak4.jpeg"
-                    alt="Misyonumuz Resim"
-                    width={1024}
-                    height={1024}
-                    className="hidden md:block flex-1 h-auto max-h-[400px] w-1/2 rounded-lg object-scale-down object-left"
-                />
-
+            {/* Misyonumuz */}
+            <section className="card flex flex-col gap-y-4 p-4">
+                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row flex-nowrap items-center gap-1">
+                    Misyonumuz{" "}
+                    <PiTargetBold
+                        aria-hidden="true"
+                        className="size-8 text-rose-700"
+                    />
+                </h2>
                 <div
                     aria-hidden="true"
-                    className="hidden lg:block border  border-black rounded-full shrink-0"
+                    className="border rounded-full border-black shrink-0"
                 />
 
-                <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
-                    <h2 className="text-2xl font-bold flex flex-row flex-nowrap items-center gap-1">
-                        Misyonumuz{" "}
-                        <PiTargetBold
-                            aria-hidden="true"
-                            className="size-7 text-rose-700"
+                <div className="flex flex-row gap-x-5 justify-between">
+                    <div
+                        className="hidden md:block flex-1"
+                        aria-describedby="image container"
+                    >
+                        <Image
+                            src="/images/kapak4.jpeg"
+                            alt="Misyonumuz Resim"
+                            width={1024}
+                            height={1024}
+                            priority
+                            className="w-full h-auto rounded-lg object-contain clear-both"
                         />
-                    </h2>
+                    </div>
                     <div
                         aria-hidden="true"
-                        className="border rounded-full border-black shrink-0"
+                        className="hidden md:block border  border-black rounded-full shrink-0"
                     />
-                    <p className="text-lg">
-                        Şirketimiz, müşterilerimize en kaliteli ürünleri ve
-                        hizmetleri sunarak onların hayatlarını güzelleştirmeyi
-                        taahhüt etmektedir. Sürdürülebilirlik, dürüstlük,
-                        şeffaflık , güven ve müşteri memnuniyeti, işimizin temel
-                        değerlerini oluşturmaktadır. Bu değerler ışığında
-                        inovasyon ve kaliteye verdiğimiz önemle,
-                        müşterilerimizin beklentilerini aşmak, sosyal
-                        sorumluluklarımızın bilincinde, topluma ve çevreye
-                        saygılı bir şekilde hareket etmek için her geçen gün
-                        daha fazla çalışmaktayız.
-                    </p>
-                </article>
+                    <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
+                        <p className="text-lg">
+                            Şirketimiz, müşterilerimize en kaliteli ürünleri ve
+                            hizmetleri sunarak onların hayatlarını
+                            güzelleştirmeyi taahhüt etmektedir.
+                            Sürdürülebilirlik, dürüstlük, şeffaflık , güven ve
+                            müşteri memnuniyeti, işimizin temel değerlerini
+                            oluşturmaktadır. Bu değerler ışığında inovasyon ve
+                            kaliteye verdiğimiz önemle, müşterilerimizin
+                            beklentilerini aşmak, sosyal sorumluluklarımızın
+                            bilincinde, topluma ve çevreye saygılı bir şekilde
+                            hareket etmek için her geçen gün daha fazla
+                            çalışmaktayız.
+                        </p>
+                    </article>
+                </div>
             </section>
 
-            <section className="card p-4 flex flex-row gap-x-5 justify-between">
-                <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
-                    <h2 className="text-2xl font-bold flex flex-row flex-nowrap items-center gap-1">
-                        Vizyonumuz
-                        <PiBinocularsFill
-                            aria-hidden="true"
-                            className="size-7 text-indigo-600"
-                        />
-                    </h2>
-                    <div
+            {/* Vizyonumuz  */}
+            <section className="card flex flex-col gap-y-4 p-4">
+                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row flex-nowrap items-center gap-1">
+                    Vizyonumuz
+                    <PiBinocularsFill
                         aria-hidden="true"
-                        className="border rounded-full border-black shrink-0"
+                        className="size-8 text-indigo-600"
                     />
-                    <p className="text-lg">
-                        En yenilikçi ürünleri ve çözümleri sunarak dünya çapında
-                        tanınan lider bir kapı ve kapak markası olarak kalite
-                        standartlarını belirlemeyi hedefliyoruz.
-                        Sürdürülebilirlik ilkesini benimseyerek, toplumlara ve
-                        çevreye değer katan bir şirket olarak bilinmek
-                        istiyoruz. Çalışanlarımızın gelişimine önem vererek
-                        adil, çeşitli ve destekleyici bir iş ortamı sağlamayı
-                        amaçlıyoruz.
-                    </p>
-                </article>
-
+                </h2>
                 <div
                     aria-hidden="true"
-                    className="hidden lg:block border  border-black rounded-full shrink-0"
+                    className="border rounded-full border-black shrink-0"
                 />
+                <div className="flex flex-row gap-x-5 justify-between">
+                    <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
+                        <p className="text-lg">
+                            En yenilikçi ürünleri ve çözümleri sunarak dünya
+                            çapında tanınan lider bir kapı ve kapak markası
+                            olarak kalite standartlarını belirlemeyi
+                            hedefliyoruz. Sürdürülebilirlik ilkesini
+                            benimseyerek, toplumlara ve çevreye değer katan bir
+                            şirket olarak bilinmek istiyoruz. Çalışanlarımızın
+                            gelişimine önem vererek adil, çeşitli ve
+                            destekleyici bir iş ortamı sağlamayı amaçlıyoruz.
+                        </p>
+                    </article>
 
-                <Image
-                    src="/images/kapak5.jpeg"
-                    alt="Vizyonumuz Resim"
-                    width={1024}
-                    height={1024}
-                    className="hidden md:block flex-1 h-auto max-h-[400px] w-1/2 rounded-lg object-scale-down object-right clear-right"
-                />
+                    <div
+                        aria-hidden="true"
+                        className="hidden md:block border  border-black rounded-full shrink-0"
+                    />
+
+                    <div
+                        className="hidden md:block flex-1"
+                        aria-describedby="image container"
+                    >
+                        <Image
+                            src="/images/kapak5.jpeg"
+                            alt="Vizyonumuz Resim"
+                            width={1024}
+                            height={1024}
+                            priority
+                            className="w-full h-auto rounded-lg object-contain clear-both"
+                        />
+                    </div>
+                </div>
             </section>
         </main>
     );
