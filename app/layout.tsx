@@ -17,11 +17,14 @@ export default function RootLayout({
 }>) {
     return (
         <html
-            lang="en"
+            lang="tr"
             className="light"
         >
-            <body className={`${inter.className} min-h-screen   antialiased`}>
-                <Navigation /> {children}
+            <body
+                className={`${inter.className} min-h-screen antialiased bg-gradient-to-t from-[#171717] to-[#011222]`}
+            >
+                <Navigation />
+                <main className="main-container">{children}</main>
             </body>
         </html>
     );

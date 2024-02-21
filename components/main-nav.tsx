@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
 import { HiMenu } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
+import NavLink from "./ui/NavLink";
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,12 +21,12 @@ const Navigation = () => {
 
     return (
         <nav
-            className="bg-white/90 backdrop-blur-2xl
-                        rounded-b-md shadow-lg flex flex-row p-4 text-[#271810] 
+            className=" text-white
+                        rounded-b-2xl flex flex-row p-4
                         justify-between sm:max-w-screen-xl sm:mx-auto items-center 
                         "
         >
-            <h2 className="font-bold text-lg sm:text-xl">Elbar Mobilya</h2>
+            <h2 className="font-semibold text-xl sm:text-2xl">Elbar Mobilya</h2>
 
             <button
                 aria-describedby="Navbar button for open menu when window size is small"
@@ -39,56 +38,41 @@ const Navigation = () => {
                 />
             </button>
 
-            <ul className="hidden md:flex md:flex-row gap-x-4">
+            <ul className="hidden md:flex md:flex-row gap-x-3 ">
                 <li>
-                    <Link
+                    <NavLink
                         href="/"
-                        className={`${
-                            pathname === "/" ? "font-semibold" : ""
-                        } nav-link `}
-                    >
-                        Anasayfa
-                    </Link>
+                        pathname={pathname}
+                        name="Anasayfa"
+                    />
                 </li>
                 <li>
-                    <Link
+                    <NavLink
                         href="/kurumsal"
-                        className={`${
-                            pathname === "/kurumsal" ? "font-semibold" : ""
-                        } nav-link`}
-                    >
-                        Kurumsal
-                    </Link>
+                        pathname={pathname}
+                        name="Kurumsal"
+                    />
                 </li>
                 <li>
-                    <Link
+                    <NavLink
                         href="#"
-                        className={`${
-                            pathname === "/urunler" ? "font-semibold" : ""
-                        } nav-link`}
-                    >
-                        Ürünlerimiz
-                    </Link>
+                        pathname={pathname}
+                        name="Ürünlerimiz"
+                    />
                 </li>
                 <li>
-                    <Link
+                    <NavLink
                         href="#"
-                        className={`${
-                            pathname === "/medya" ? "font-semibold" : ""
-                        } nav-link`}
-                    >
-                        Medya
-                    </Link>
+                        pathname={pathname}
+                        name="Medya"
+                    />
                 </li>
                 <li>
-                    <Link
+                    <NavLink
                         href="/iletisim"
-                        className={`${
-                            pathname === "/iletisim" ? "font-semibold" : ""
-                        } nav-link`}
-                    >
-                        İletişim
-                    </Link>
+                        pathname={pathname}
+                        name="İletişim"
+                    />
                 </li>
             </ul>
         </nav>

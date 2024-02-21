@@ -7,15 +7,15 @@ import Image from "next/image";
 
 const Kurumsal = () => {
     return (
-        <main className="main-container">
+        <>
             {/* Neden Elbar? */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-center bg-white/70 text-[#271810] py-4 backdrop-blur-lg shadow-md rounded-lg">
-                NEDEN ELBAR?
+            <h2 className="text-3xl sm:text-4xl font-light text-center text-white py-4 shadow-md rounded-2xl">
+                NEDEN ELBAR&apos;I TERCİH ETMELİSİNİZ?
             </h2>
 
             {/* Kısaca Biz */}
-            <section className="card flex flex-col gap-y-4 p-4">
-                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row items-center gap-x-2">
+            <section className="card flex flex-col gap-y-4">
+                <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row items-center gap-x-2">
                     Kısaca Biz <IoBook className="size-8 text-lime-700" />
                 </h2>
                 <div
@@ -82,8 +82,8 @@ const Kurumsal = () => {
             </section>
 
             {/* Misyonumuz */}
-            <section className="card flex flex-col gap-y-4 p-4">
-                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row flex-nowrap items-center gap-1">
+            <section className="card flex flex-col gap-y-4 group">
+                <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row flex-nowrap items-center gap-1">
                     Misyonumuz{" "}
                     <PiTargetBold
                         aria-hidden="true"
@@ -97,7 +97,7 @@ const Kurumsal = () => {
 
                 <div className="flex flex-row gap-x-5 justify-between">
                     <div
-                        className="hidden md:block flex-1"
+                        className="hidden md:block flex-1 overflow-hidden  rounded-lg"
                         aria-describedby="image container"
                     >
                         <Image
@@ -106,7 +106,7 @@ const Kurumsal = () => {
                             width={1024}
                             height={1024}
                             priority
-                            className="w-full h-auto rounded-lg object-contain clear-both"
+                            className="w-full h-auto  object-contain clear-both group-hover:scale-125 transition-transform duration-500 ease-in"
                         />
                     </div>
                     <div
@@ -132,8 +132,8 @@ const Kurumsal = () => {
             </section>
 
             {/* Vizyonumuz  */}
-            <section className="card flex flex-col gap-y-4 p-4">
-                <h2 className="text-2xl sm:text-3xl font-bold flex flex-row flex-nowrap items-center gap-1">
+            <section className="card flex flex-col gap-y-4 group">
+                <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row flex-nowrap items-center gap-1">
                     Vizyonumuz
                     <PiBinocularsFill
                         aria-hidden="true"
@@ -164,7 +164,7 @@ const Kurumsal = () => {
                     />
 
                     <div
-                        className="hidden md:block flex-1"
+                        className="hidden md:block flex-1 overflow-hidden rounded-lg"
                         aria-describedby="image container"
                     >
                         <Image
@@ -173,12 +173,12 @@ const Kurumsal = () => {
                             width={1024}
                             height={1024}
                             priority
-                            className="w-full h-auto rounded-lg object-contain clear-both"
+                            className="w-full h-auto  object-cover clear-both group-hover:scale-125 transition-transform duration-500 ease-in"
                         />
                     </div>
                 </div>
             </section>
-        </main>
+        </>
     );
 };
 
