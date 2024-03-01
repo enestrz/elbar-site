@@ -10,16 +10,19 @@ const config = {
     ],
     prefix: "",
     theme: {
-        container: {
-            center: true,
-            padding: "2rem",
-            screens: {
-                "2xl": "1400px",
+        // container: {
+        //   center: true,
+        //   padding: "2rem",
+        //   screens: {
+        //     "2xl": "1400px",
+        //   },
+        // },
+        extend: {
+            colors: {
+                background: "#171717",
             },
         },
-        extend: {},
     },
-    plugins: [],
-};
+} satisfies Config;
 
 export default config;

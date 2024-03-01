@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/main-nav";
+import Navbar from "@/components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,12 +20,12 @@ export default function RootLayout({
             lang="tr"
             className="light"
         >
-            <body
-                className={`${inter.className} min-h-screen antialiased bg-gradient-to-t from-[#171717] to-[#011222]`}
-            >
-                <Navigation />
+            <body className={`${inter.className} min-h-[100svh] antialiased`}>
+                <Navbar />
                 <main className="main-container">{children}</main>
             </body>
         </html>
     );
 }
+
+// bg-gradient-to-t from-[#171717] to-[#011222]

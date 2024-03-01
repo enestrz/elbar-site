@@ -9,9 +9,11 @@ const Kurumsal = () => {
     return (
         <>
             {/* Neden Elbar? */}
-            <h2 className="text-3xl sm:text-4xl font-light text-center text-white py-4 shadow-md rounded-2xl">
-                NEDEN ELBAR&apos;I TERCİH ETMELİSİNİZ?
-            </h2>
+            <section className="leading-relaxed px-4">
+                <h2 className="text-3xl sm:text-4xl font-light text-white shadow-md rounded-2xl">
+                    Neden Elbar&apos;ı tercih etmelisiniz?
+                </h2>
+            </section>
 
             {/* Kısaca Biz */}
             <section className="card flex flex-col gap-y-4">
@@ -20,7 +22,7 @@ const Kurumsal = () => {
                 </h2>
                 <div
                     aria-hidden="true"
-                    className="border rounded-full border-black shrink-0"
+                    className="border rounded-full border-background shrink-0"
                 />
                 <article className="flex flex-col lg:flex-row lg:gap-x-3 gap-y-2  md:gap-y-3 lg:justify-between text-wrap">
                     <p className="text-base sm:text-lg drop-shadow-2xl lg:order-3 lg:flex-1 text-wrap">
@@ -39,7 +41,7 @@ const Kurumsal = () => {
 
                     <div
                         aria-hidden="true"
-                        className="hidden lg:block border lg:order-2 border-black rounded-full shrink-0"
+                        className="hidden lg:block border lg:order-2 border-background rounded-full shrink-0"
                     />
 
                     <ul className="lg:order-1 text-base md:text-lg leading-relaxed lg:flex-1 space-y-2 lg:space-y-3">
@@ -76,8 +78,8 @@ const Kurumsal = () => {
                     </ul>
                 </article>
 
-                <strong className="font-semibold text-center text-xl mt-4">
-                    HEDEFİMİZ HERKESİN HAYALİNİ GERÇEKLEŞTİRMEK.
+                <strong className="font-bold text-center text-2xl mt-4">
+                    HEDEFİMİZ HERKESİN HAYALİNİ GERÇEKLEŞTİRMEK!
                 </strong>
             </section>
 
@@ -92,7 +94,7 @@ const Kurumsal = () => {
                 </h2>
                 <div
                     aria-hidden="true"
-                    className="border rounded-full border-black shrink-0"
+                    className="border rounded-full border-background shrink-0"
                 />
 
                 <div className="flex flex-row gap-x-5 justify-between">
@@ -111,7 +113,7 @@ const Kurumsal = () => {
                     </div>
                     <div
                         aria-hidden="true"
-                        className="hidden md:block border  border-black rounded-full shrink-0"
+                        className="hidden md:block border  border-background rounded-full shrink-0"
                     />
                     <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
                         <p className="text-lg">
@@ -142,7 +144,7 @@ const Kurumsal = () => {
                 </h2>
                 <div
                     aria-hidden="true"
-                    className="border rounded-full border-black shrink-0"
+                    className="border rounded-full border-background shrink-0"
                 />
                 <div className="flex flex-row gap-x-5 justify-between">
                     <article className="flex-1 overflow-hidden flex flex-col gap-y-2">
@@ -160,7 +162,7 @@ const Kurumsal = () => {
 
                     <div
                         aria-hidden="true"
-                        className="hidden md:block border  border-black rounded-full shrink-0"
+                        className="hidden md:block border  border-background rounded-full shrink-0"
                     />
 
                     <div
