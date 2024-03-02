@@ -1,3 +1,24 @@
-import { ResimType } from "../utils";
-
-export const primersizResimler: ResimType[] = [];
+export const primersizResimler = [
+    "/kapilar/primersiz/LMD 101 BEYAZ.jpg",
+    "/kapilar/primersiz/LMD 103 SATEN BEYAZ.jpg",
+    "/kapilar/primersiz/LMD 203 BEYAZ DİŞBUDAK.jpg",
+    "/kapilar/primersiz/LMD 206 İTALYAN CEVİZ.jpg",
+    "/kapilar/primersiz/LMD 212 KOYU CEVİZ.jpg",
+    "/kapilar/primersiz/LMD 213 WENGE.jpg",
+    "/kapilar/primersiz/LMD 224 BAMBU.jpg",
+    "/kapilar/primersiz/LMD 236 KOYU BAMBU.jpg",
+    "/kapilar/primersiz/LMD 241 BEYAZ COCO.jpg",
+    "/kapilar/primersiz/LMD 241 COCO.jpg",
+    "/kapilar/primersiz/LMD 261 BAL TEAK.jpg",
+    "/kapilar/primersiz/LMD 278 BEYAZ HUŞ.jpg",
+    "/kapilar/primersiz/LMD 279 OZİGO.jpg",
+    "/kapilar/primersiz/LMD 289 YABAN ELMA.jpg",
+    "/kapilar/primersiz/LMD 290 ÖZEL COCO.jpg",
+    "/kapilar/primersiz/LMD 291 AMERİKAN CEVİZ.jpg",
+    "/kapilar/primersiz/LMD 293 TANGANİKA.jpg",
+    "/kapilar/primersiz/LMD 298 AÇIK NATUREL CEVİZ.jpg",
+    "/kapilar/primersiz/LMD 299 KOYU NATUREL CEVİZ.jpg",
+    "/kapilar/primersiz/LMD 402 PARLAK KREM.jpg",
+    "/kapilar/primersiz/LMD 404P BEYAZ.jpg",
+    "/kapilar/primersiz/LMD 410 PARLAK SİYAH.jpg",
+];
