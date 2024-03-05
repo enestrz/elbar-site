@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Kurumsal = () => {
     return (
-        <>
+        <main>
             {/* Neden Elbar? */}
             <section className="leading-relaxed px-4">
                 <h2 className="text-3xl sm:text-4xl font-light text-white shadow-md rounded-2xl">
@@ -180,7 +180,7 @@ const Kurumsal = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     );
 };
 

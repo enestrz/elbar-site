@@ -9,9 +9,21 @@ html {
     /* background-image: url("../public/images/Melamine-wood-002.png"); */
 }
 
+.homepage-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("../public/images/kapi-cover.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 @layer base {
     html {
         @apply scroll-smooth;
+    }
+
+    main {
+        @apply mt-4 sm:mx-auto w-full sm:max-w-screen-xl flex flex-col flex-1 px-2 sm:px-4 xl:px-0 gap-y-8;
     }
 }
 
@@ -24,16 +36,17 @@ html {
         @apply text-sm w-full h-full block hover:bg-zinc-700 rounded p-2;
     }
 
-    .main-container {
-        @apply mt-4 flex flex-col sm:max-w-screen-xl sm:mx-auto gap-y-8;
-    }
-
     .card {
-        @apply shadow-lg rounded-2xl bg-white/95 text-[#271810] backdrop-blur-lg p-5;
+        @apply shadow-sm rounded-2xl  bg-white/95 text-[#271810] p-5;
     }
 
     .form-input-white {
         @apply py-2 px-3 drop-shadow-md rounded-lg w-full outline-none placeholder:text-black/75
         focus:outline-2 focus:outline-offset-1 focus:outline-[#02294d]/75 transition-all duration-300 ease-in-out;
+    }
+
+    .dropdown-container {
+        @apply hidden absolute max-[1430px]:right-0 z-50 bg-black rounded-md shadow-lg drop-shadow-lg group-hover:flex flex-col min-w-[150px] gap-1 p-2
+        border-2 border-zinc-800 transition-all duration-300 ease-in-out;
     }
 }
