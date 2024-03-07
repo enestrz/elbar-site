@@ -1,7 +1,7 @@
-export default function ContactSection() {
-    async function handleSubmit(formData: FormData) {
-        "use server";
+"use client";
 
+export default function ContactSection() {
+    function handleSubmit(formData: FormData) {
         const name = formData.get("name");
         const email = formData.get("email");
         const subject = formData.get("subject");

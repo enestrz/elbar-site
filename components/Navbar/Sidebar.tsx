@@ -1,19 +1,13 @@
 "use client";
 
 import { Cycle, motion } from "framer-motion";
-import { useWindowSize } from "usehooks-ts";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+
 interface SidebarMenuProps {
     toggle: Cycle;
 }
 
 export default function Sidebar({ toggle }: SidebarMenuProps) {
-    const [isServer, setIsServer] = useState(true);
-    const { width, height } = useWindowSize();
-
-    const totalHeight = height - 70;
-
     const variants = {
         open: {
             opacity: 0.95,
