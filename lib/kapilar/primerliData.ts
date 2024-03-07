@@ -127,14 +127,14 @@ const ciftRenkKapilar = [
     "LMD 907 SATEN BEYAZ - JALUZİ.png",
 ];
 
-const boyanabilirPp = "/kapilar/primerli/boyanabilir pp/BOYANABİLİR PP.jpg";
+const boyanabilirPp = ["BOYANABİLİR PP.jpg"];
 
-const primersizUzanti = "/kapilar/primersiz/";
+const primerliUzanti = "/kapilar/primerli/";
 
 export {
     duzAhsapKapilar,
     softTouchKapilar,
     ciftRenkKapilar,
     boyanabilirPp,
-    primersizUzanti,
+    primerliUzanti,
 };

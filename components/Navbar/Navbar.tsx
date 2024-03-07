@@ -1,3 +1,5 @@
+"use client";
+
 import { HiMenu } from "react-icons/hi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import NavLink from "./NavLink";
@@ -6,10 +8,13 @@ import HamburgerMenu from "./HamburgerMenu";
 import Dropdown from "./Dropdown";
 import { DropdownItem } from "./navbarTypes";
 import { Montagu_Slab } from "next/font/google";
+import { useCycle, motion } from "framer-motion";
+import Sidebar from "./Sidebar";
 
 const montaguSlab = Montagu_Slab({ subsets: ["latin"] });
 
 const Navbar = () => {
+    const [isOpen, toggleOpen] = useCycle(false, true);
     const menuItems = [
         "Anasayfa",
         "Kurumsal",
@@ -19,20 +24,16 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className=" text-[#FDFDFFEF] sm:mx-auto w-full sm:max-w-screen-xl flex flex-row p-4 justify-between items-baseline border-b border-white/30 shadow-sm shadow-current/50">
+        <motion.nav
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            className=" relative  text-[#FDFDFFEF] h-[70px] sm:mx-auto w-full sm:max-w-screen-xl flex flex-row p-4 justify-between items-center sm:items-baseline border-b border-white/30 shadow-sm shadow-current/50"
+        >
             <h2 className="font-semibold text-xl sm:text-3xl">Elbar Mobilya</h2>
 
-            {/* <button
-                aria-describedby="Navbar button for open menu when window size is small"
-                className="appearance-none md:hidden flex flex-row items-center justify-end bg-transparent outline-none focus:outline-none"
-            >
-                <HiMenu
-                    aria-hidden="true"
-                    className="size-8"
-                />
-            </button> */}
+            <HamburgerMenu toggle={toggleOpen} />
 
-            {/* <HamburgerMenu /> */}
+            <Sidebar toggle={toggleOpen} />
 
             <ul className="hidden md:flex md:flex-row gap-x-3 ">
                 <li>
@@ -76,7 +77,7 @@ const Navbar = () => {
                     <Dropdown list={iletisimDropdown} />
                 </li>
             </ul>
-        </nav>
+        </motion.nav>
     );
 };
 export default Navbar;
@@ -96,26 +97,26 @@ const iletisimDropdown: Array<DropdownItem> = [
 
 const urunlerimizDropdown: Array<DropdownItem> = [
     {
-        href: "/iletisim/#iletisim-formu",
+        href: "/urunlerimiz/kapilar",
         title: "Membran Kapı",
     },
     {
-        href: "/iletisim/#adres",
+        href: "/urunlerimiz/kapaklar",
         title: "Membran Kapak",
     },
 ];
 
 const medyaDropdown: Array<DropdownItem> = [
     {
-        href: "/iletisim/#iletisim-formu",
+        href: "#",
         title: "Foto Galeri",
     },
     {
-        href: "/iletisim/#adres",
+        href: "#",
         title: "Videolar",
     },
     {
-        href: "/iletisim/#adres",
+        href: "#",
         title: "Kataloğumuz",
     },
 ];

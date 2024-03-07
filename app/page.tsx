@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RxArrowRight } from "react-icons/rx";
 import { Montagu_Slab } from "next/font/google";
+import Modal from "@/components/Modal";
 
 const montaguSlab = Montagu_Slab({ subsets: ["latin"] });
 

@@ -24,7 +24,7 @@ const metalKapaklar = [
     "LMD 527 DEKOR GOLD.png",
 ];
 
-const ahşapKapaklar = [
+const ahsapKapaklar = [
     "LMD 201 SEDEF BEYAZ.jpg",
     "LMD 202 AKÇAAĞAÇ.jpg",
     "LMD 203 BEYAZ DİŞBUDAK.jpg",
@@ -165,7 +165,7 @@ const ozelKapaklar = [
     "LMD 461 BEJ METALİK.png",
 ];
 
-const parlakAhşapKapaklar = [
+const parlakAhsapKapaklar = [
     "LMD 403 PARLAK ABANOZ.png",
     "LMD 408 PARLAK MAKASSAR.png",
     "LMD 409 PARLAK ZEYTİN.png",
@@ -228,13 +228,13 @@ const softTouchKapaklar = [
 const kapakUzanti = "/kapaklar/";
 
 export {
-    ahşapKapaklar,
+    ahsapKapaklar,
     duzKapaklar,
     duzParlakKapaklar,
     highGlossKapaklar,
     metalKapaklar,
     ozelKapaklar,
-    parlakAhşapKapaklar,
+    parlakAhsapKapaklar,
     softTouchKapaklar,
     kapakUzanti,
 };

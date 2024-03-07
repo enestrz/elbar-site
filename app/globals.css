@@ -17,6 +17,10 @@ html {
     background-position: left;
 }
 
+.sidebar-height {
+    height: calc(100vh - 70px);
+}
+
 @layer base {
     html {
         @apply scroll-smooth;
@@ -37,7 +41,7 @@ html {
     }
 
     .card {
-        @apply shadow-sm rounded-2xl  bg-white/95 text-[#271810] p-5;
+        @apply rounded-2xl bg-white/95 text-[#271810]   p-5;
     }
 
     .form-input-white {
@@ -50,3 +54,5 @@ html {
         border-2 border-zinc-800 transition-all duration-300 ease-in-out;
     }
 }
+
+/*  */

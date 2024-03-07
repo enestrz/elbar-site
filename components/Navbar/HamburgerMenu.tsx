@@ -1,39 +1,52 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { Cycle, motion } from "framer-motion";
 
-const HamburgerMenu = () => {
-    const [isOpen, setIsOpen] = useState(false);
+interface HamburgerMenuProps {
+    toggle: Cycle;
+}
 
-    const toggleMenu = () => {
-        setIsOpen((prev) => !prev);
-    };
-
+const HamburgerMenu = ({ toggle }: HamburgerMenuProps) => {
     return (
         <motion.button
-            className="w-8 h-8 flex items-center justify-center"
-            onClick={toggleMenu}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            initial={false}
+            onClick={() => toggle()}
+            style={{ background: "none", border: "none", cursor: "pointer" }}
+            className="relative z-50 md:hidden"
         >
-            {isOpen ? (
-                <svg
-                    className="w-6 h-6 fill-transparent stroke-current"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M4.5 10.5L10 16L15.5 10.5" />
-                </svg>
-            ) : (
-                <svg
-                    className="w-6 h-6 fill-transparent stroke-current"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path d="M15 3H5c-1.1 0-2 0.9-2 2v14c0 1.1 0.9 2 2 2h10c1.1 0 2-0.9 2-2V5c0-1.1-0.9-2-2-2zM5 5v14h10V5H5z" />
-                </svg>
-            )}
+            <motion.svg
+                width={23}
+                height={23}
+                viewBox="0 0 23 23"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <motion.path
+                    variants={{
+                        closed: { d: "M 2 2.5 L 20 2.5" },
+                        open: { d: "M 3 16.5 L 17 2.5" },
+                    }}
+                    // d="M0 30 L60 30"
+                    className="stroke-white stroke-[2px] fill-none"
+                    strokeLinecap="round"
+                />
+                <motion.path
+                    // d="M 2 9.423 L 20 9.423"
+                    variants={{
+                        closed: { opacity: 1 },
+                        open: { opacity: 0 },
+                    }}
+                    className="stroke-white stroke-[2px] fill-none"
+                    strokeLinecap="round"
+                />
+                <motion.path
+                    variants={{
+                        closed: { d: "M 2 16.346 L 20 16.346" },
+                        open: { d: "M 3 2.5 L 17 16.346" },
+                    }}
+                    className="stroke-white stroke-[2px] fill-none"
+                    strokeLinecap="round"
+                />
+            </motion.svg>
         </motion.button>
     );
 };
