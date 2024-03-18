@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { RxArrowRight } from "react-icons/rx";
-import { Montagu_Slab } from "next/font/google";
 
 export default function Home() {
     return (
@@ -9,7 +8,7 @@ export default function Home() {
             <section className="card flex-1 flex flex-col bg-[#FAF6F5] homepage-bg justify-center p-0">
                 <div className="flex flex-1 w-full h-full flex-col  items-center sm:backdrop-blur-sm sm:backdrop-brightness-125 rounded-3xl text-black ">
                     <Image
-                        src="../public/images/logo-transparent.png"
+                        src="/images/logo-transparent.png"
                         alt="elbar logo"
                         width={500}
                         height={500}

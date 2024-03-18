@@ -5,10 +5,5 @@ export default function UrunLayout({
 }: {
     children: React.ReactNode;
 }) {
-    return (
-        <main className="flex-col  sm:flex-row">
-            <UrunSidebar />
-            {children}
-        </main>
-    );
+    return <main className="flex-col  sm:flex-row">{children}</main>;
 }

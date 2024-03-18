@@ -104,6 +104,10 @@ const urunlerimizDropdown: Array<DropdownItem> = [
         href: "/urunlerimiz/kapaklar",
         title: "Membran Kapak",
     },
+    {
+        href: "/urunlerimiz/interaktif",
+        title: "İnteraktif",
+    },
 ];
 
 const medyaDropdown: Array<DropdownItem> = [
