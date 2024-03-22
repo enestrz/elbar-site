@@ -4,6 +4,7 @@ import { RxCaretDown } from "react-icons/rx";
 import UrunSidebarLink from "./UrunSidebarLink";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const sidebarVariants = {
     open: {
@@ -29,6 +30,14 @@ const buttonVariants = {
 
 export default function UrunSidebar() {
     const [isActive, setIsActive] = useState(true);
+
+    const onlyWidth = useWindowWidth();
+
+    if (onlyWidth < 640 && isActive) {
+        setIsActive(false);
+    } else if (onlyWidth > 640 && !isActive) {
+        setIsActive(true);
+    }
 
     function handleActive() {
         setIsActive(!isActive);

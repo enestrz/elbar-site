@@ -1,27 +1,22 @@
 "use client";
 
-import { HiMenu } from "react-icons/hi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import NavLink from "./NavLink";
-import NavDropdownLink from "./NavDropdownLink";
 import HamburgerMenu from "./HamburgerMenu";
 import Dropdown from "./Dropdown";
 import { DropdownItem } from "./navbarTypes";
-import { Montagu_Slab } from "next/font/google";
 import { useCycle, motion } from "framer-motion";
 import Sidebar from "./Sidebar";
-
-const montaguSlab = Montagu_Slab({ subsets: ["latin"] });
+import { useWindowWidth } from "@react-hook/window-size";
 
 const Navbar = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
-    const menuItems = [
-        "Anasayfa",
-        "Kurumsal",
-        "Ürünlerimiz",
-        "Medya",
-        "İletişim",
-    ];
+
+    const onlyWidth = useWindowWidth();
+
+    if (onlyWidth > 768 && isOpen) {
+        toggleOpen();
+    }
 
     return (
         <motion.nav

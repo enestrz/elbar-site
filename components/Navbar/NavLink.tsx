@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { use, useEffect } from "react";
 
 interface NavLinkProps {
     href: string;
@@ -10,7 +11,14 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
     const pathname = usePathname();
-    const isActive = pathname === href;
+    useEffect(() => {
+        console.log("pathname", pathname);
+        console.log("href", href);
+    }, [pathname, href]);
+    const currentPath = pathname.slice(1); // remove the first "/"
+    const newCurrentPath = currentPath.split("/")[0];
+    const newHref = href.split("/")[1];
+    const isActive = newCurrentPath === newHref;
 
     return (
         <Link

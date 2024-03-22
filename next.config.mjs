@@ -3,7 +3,10 @@ const nextConfig = {
     output: "export",
     images: {
         unoptimized: true,
+        // loader: "custom",
     },
+    skipTrailingSlashRedirect: true,
+    trailingSlash: true,
     transpilePackages: ["three"],
 };
 

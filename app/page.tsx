@@ -12,6 +12,7 @@ export default function Home() {
                         alt="elbar logo"
                         width={500}
                         height={500}
+                        priority
                         className="object-contain h-1/2 w-auto "
                     />
 

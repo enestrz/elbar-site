@@ -8,25 +8,27 @@ import LoadingScreen from "./LoadingScreen";
 import NewModel from "./NewModel";
 
 export default function InteraktifPage() {
-    const ref = useRef();
+    // @ts-ignore
+    const ref = useRef(null);
     return (
         <section className="card w-full sm:ml-8 rounded">
             <Canvas
-                shadows
                 dpr={[1, 2]}
                 camera={{ fov: 50 }}
+                frameloop="demand"
             >
                 <Suspense fallback={<LoadingScreen />}>
                     <Stage
-                        // controls={ref}
-                        intensity={1}
+                        // @ts-ignore
+                        controls={ref}
+                        intensity={0.1}
+                        environment="city"
+                        // preset="upfront"
                     >
                         <NewModel />
                     </Stage>
                 </Suspense>
-                <OrbitControls
-                //  ref={ref}
-                />
+                <OrbitControls ref={ref} />
             </Canvas>
         </section>
     );
