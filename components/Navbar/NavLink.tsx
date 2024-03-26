@@ -6,15 +6,12 @@ import { use, useEffect } from "react";
 
 interface NavLinkProps {
     href: string;
+    pathname: string;
     children?: React.ReactNode;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
-    const pathname = usePathname();
-    useEffect(() => {
-        console.log("pathname", pathname);
-        console.log("href", href);
-    }, [pathname, href]);
+const NavLink: React.FC<NavLinkProps> = ({ href, pathname, children }) => {
+    // const pathname = usePathname();
     const currentPath = pathname.slice(1); // remove the first "/"
     const newCurrentPath = currentPath.split("/")[0];
     const newHref = href.split("/")[1];

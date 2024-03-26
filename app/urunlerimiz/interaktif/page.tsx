@@ -12,7 +12,7 @@ export default function InteraktifPage() {
     const ref = useRef(null);
     return (
         <section className="card w-full sm:ml-8 rounded">
-            <Canvas
+            {/* <Canvas
                 dpr={[1, 2]}
                 camera={{ fov: 50 }}
                 frameloop="demand"
@@ -29,7 +29,8 @@ export default function InteraktifPage() {
                     </Stage>
                 </Suspense>
                 <OrbitControls ref={ref} />
-            </Canvas>
+            </Canvas> */}
+            <Model />
         </section>
     );
 }

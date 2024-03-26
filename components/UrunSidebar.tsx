@@ -30,13 +30,19 @@ const buttonVariants = {
 
 export default function UrunSidebar() {
     const [isActive, setIsActive] = useState(true);
+    const [isWindowBigger, setIsWindowBigger] = useState(false);
+    const [isWindowSmaller, setIsWindowSmaller] = useState(false);
 
     const onlyWidth = useWindowWidth();
 
-    if (onlyWidth < 640 && isActive) {
+    if (onlyWidth < 640 && isActive && !isWindowSmaller) {
         setIsActive(false);
-    } else if (onlyWidth > 640 && !isActive) {
+        setIsWindowSmaller(true);
+        setIsWindowBigger(false);
+    } else if (onlyWidth > 640 && !isActive && !isWindowBigger) {
         setIsActive(true);
+        setIsWindowBigger(true);
+        setIsWindowSmaller(false);
     }
 
     function handleActive() {

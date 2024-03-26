@@ -8,9 +8,12 @@ import { DropdownItem } from "./navbarTypes";
 import { useCycle, motion } from "framer-motion";
 import Sidebar from "./Sidebar";
 import { useWindowWidth } from "@react-hook/window-size";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
+
+    const pathname = usePathname();
 
     const onlyWidth = useWindowWidth();
 
@@ -32,15 +35,28 @@ const Navbar = () => {
 
             <ul className="hidden md:flex md:flex-row gap-x-3 ">
                 <li>
-                    <NavLink href="/">Anasayfa</NavLink>
+                    <NavLink
+                        href="/"
+                        pathname={pathname}
+                    >
+                        Anasayfa
+                    </NavLink>
                 </li>
 
                 <li>
-                    <NavLink href="/kurumsal">Kurumsal</NavLink>
+                    <NavLink
+                        href="/kurumsal"
+                        pathname={pathname}
+                    >
+                        Kurumsal
+                    </NavLink>
                 </li>
 
                 <li className="relative group">
-                    <NavLink href="/urunlerimiz">
+                    <NavLink
+                        href="/urunlerimiz"
+                        pathname={pathname}
+                    >
                         Ürünlerimiz
                         <MdKeyboardArrowDown
                             className="flex-shrink-0 size-5"
@@ -51,7 +67,10 @@ const Navbar = () => {
                 </li>
 
                 <li className="relative group">
-                    <NavLink href="#">
+                    <NavLink
+                        href="#"
+                        pathname={pathname}
+                    >
                         Medya
                         <MdKeyboardArrowDown
                             className="flex-shrink-0 size-5"
@@ -62,7 +81,10 @@ const Navbar = () => {
                 </li>
 
                 <li className="relative group ">
-                    <NavLink href="/iletisim">
+                    <NavLink
+                        href="/iletisim"
+                        pathname={pathname}
+                    >
                         İletişim
                         <MdKeyboardArrowDown
                             className="flex-shrink-0 size-5"

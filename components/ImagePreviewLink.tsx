@@ -24,8 +24,7 @@ export default function ImagePreviewLink({
                 alt={alt}
                 width={500}
                 height={500}
-                // priority
-                loading="lazy"
+                priority
                 className="rounded-md object-cover h-full w-full"
             />
             <h3 className="font-semibold absolute top-2 left-2 bg-black/50 text-white p-2 rounded">
