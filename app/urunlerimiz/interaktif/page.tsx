@@ -1,36 +1,30 @@
 "use client";
-
-import { Canvas } from "@react-three/fiber";
+import { useState } from "react";
 import Model from "./Model";
-import { OrbitControls, Stage } from "@react-three/drei";
-import { Suspense, useRef } from "react";
-import LoadingScreen from "./LoadingScreen";
-import NewModel from "./NewModel";
+
+import Carousel from "@/app/urunlerimiz/interaktif/Carousel";
+
+const kapilar = [
+    {
+        src: "/kapilar/primerli/cift-renk/LMD 206-206-206 İTALYAN CEVİZ.png",
+        alt: "Kapı",
+    },
+    {
+        src: "/kapilar/primerli/cift-renk/LMD 261-261-261 BAL TEAK.jpg",
+        alt: "Kapı",
+    },
+];
 
 export default function InteraktifPage() {
-    // @ts-ignore
-    const ref = useRef(null);
+    const [selectedDoor, setSelectedDoor] = useState<string>(kapilar[0].src);
+
     return (
-        <section className="card w-full sm:ml-8 rounded">
-            {/* <Canvas
-                dpr={[1, 2]}
-                camera={{ fov: 50 }}
-                frameloop="demand"
-            >
-                <Suspense fallback={<LoadingScreen />}>
-                    <Stage
-                        // @ts-ignore
-                        controls={ref}
-                        intensity={0.1}
-                        environment="city"
-                        // preset="upfront"
-                    >
-                        <NewModel />
-                    </Stage>
-                </Suspense>
-                <OrbitControls ref={ref} />
-            </Canvas> */}
-            <Model />
+        <section className="card w-full flex flex-row rounded relative">
+            <Carousel
+                kapilar={kapilar}
+                setSelectedDoor={setSelectedDoor}
+            />
+            <Model selectedDoor={selectedDoor} />
         </section>
     );
 }

@@ -37,7 +37,7 @@ html {
     }
 
     .nav-dropdown-link {
-        @apply text-sm w-full h-full block hover:bg-zinc-700 rounded p-2;
+        @apply text-sm w-full h-full  hover:bg-zinc-700 rounded p-2 flex flex-row justify-between items-center;
     }
 
     .card {
@@ -48,11 +48,21 @@ html {
         @apply py-2 px-3 drop-shadow-md rounded-lg w-full outline-none placeholder:text-black/75
         focus:outline-2 focus:outline-offset-1 focus:outline-[#02294d]/75 transition-all duration-300 ease-in-out;
     }
-
-    .dropdown-container {
-        @apply hidden absolute max-[1430px]:right-0 z-50 bg-black rounded-md shadow-lg drop-shadow-lg group-hover:flex flex-col min-w-[150px] gap-1 p-2
-        border-2 border-zinc-800 transition-all duration-300 ease-in-out;
-    }
 }
 
-/*  */
+/* Carousel */
+.embla {
+    overflow: hidden;
+    height: 100%;
+}
+.embla__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.embla__slide {
+    flex: 0 0 100px;
+    min-width: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}

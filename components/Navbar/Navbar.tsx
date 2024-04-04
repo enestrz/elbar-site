@@ -43,13 +43,18 @@ const Navbar = () => {
                     </NavLink>
                 </li>
 
-                <li>
+                <li className="relative group">
                     <NavLink
                         href="/kurumsal"
                         pathname={pathname}
                     >
                         Kurumsal
+                        <MdKeyboardArrowDown
+                            className="flex-shrink-0 size-5"
+                            aria-hidden="true"
+                        />
                     </NavLink>
+                    <Dropdown list={kurumsalDropdown} />
                 </li>
 
                 <li className="relative group">
@@ -99,7 +104,20 @@ const Navbar = () => {
 };
 export default Navbar;
 
-//text-[#172428]
+const kurumsalDropdown: Array<DropdownItem> = [
+    {
+        href: "/kurumsal/#neden-elbar",
+        title: "Neden Elbar",
+    },
+    {
+        href: "/kurumsal/#misyonumuz",
+        title: "Kısaca Biz",
+    },
+    {
+        href: "/kurumsal/#vizyonumuz",
+        title: "Vizyonumuz",
+    },
+];
 
 const iletisimDropdown: Array<DropdownItem> = [
     {
@@ -115,11 +133,35 @@ const iletisimDropdown: Array<DropdownItem> = [
 const urunlerimizDropdown: Array<DropdownItem> = [
     {
         href: "/urunlerimiz/kapilar",
-        title: "Membran Kapı",
+        title: "Kapı",
+        subMenu: [
+            {
+                href: "/urunlerimiz/kapilar/renkler",
+                title: "Renkler",
+            },
+            {
+                href: "/urunlerimiz/kapilar/boya",
+                title: "Boya",
+            },
+        ],
     },
     {
         href: "/urunlerimiz/kapaklar",
-        title: "Membran Kapak",
+        title: "Kapak",
+        subMenu: [
+            {
+                href: "/urunlerimiz/kapaklar/cam-kapak",
+                title: "Cam Kapak",
+            },
+            {
+                href: "/urunlerimiz/kapaklar/renkler",
+                title: "Renkler",
+            },
+            {
+                href: "/urunlerimiz/kapaklar/boya",
+                title: "Boya",
+            },
+        ],
     },
     {
         href: "/urunlerimiz/interaktif",
@@ -129,15 +171,15 @@ const urunlerimizDropdown: Array<DropdownItem> = [
 
 const medyaDropdown: Array<DropdownItem> = [
     {
-        href: "#",
+        href: "/medya/foto-galeri",
         title: "Foto Galeri",
     },
     {
-        href: "#",
+        href: "/medya/video-galeri",
         title: "Videolar",
     },
     {
-        href: "#",
+        href: "/medya/katalog",
         title: "Kataloğumuz",
     },
 ];

@@ -8,17 +8,12 @@ import Image from "next/image";
 const Kurumsal = () => {
     return (
         <main>
-            {/* Neden Elbar? */}
-            <section className="leading-relaxed px-4">
-                <h2 className="text-3xl sm:text-4xl font-light text-white shadow-md rounded-2xl">
-                    Neden Elbar&apos;ı tercih etmelisiniz?
-                </h2>
-            </section>
-
-            {/* Kısaca Biz */}
-            <section className="card flex flex-col gap-y-4">
+            <section
+                id="neden-elbar"
+                className="card flex flex-col gap-y-4"
+            >
                 <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row items-center gap-x-2">
-                    Kısaca Biz <IoBook className="size-8 text-lime-700" />
+                    Neden Elbar <IoBook className="size-8 text-lime-700" />
                 </h2>
                 <div
                     aria-hidden="true"
@@ -83,10 +78,12 @@ const Kurumsal = () => {
                 </strong>
             </section>
 
-            {/* Misyonumuz */}
-            <section className="card flex flex-col gap-y-4 group">
+            <section
+                id="misyonumuz"
+                className="card flex flex-col gap-y-4 group"
+            >
                 <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row flex-nowrap items-center gap-1">
-                    Misyonumuz{" "}
+                    Kısaca Biz{" "}
                     <PiTargetBold
                         aria-hidden="true"
                         className="size-8 text-rose-700"
@@ -133,8 +130,10 @@ const Kurumsal = () => {
                 </div>
             </section>
 
-            {/* Vizyonumuz  */}
-            <section className="card flex flex-col gap-y-4 group">
+            <section
+                id="vizyonumuz"
+                className="card flex flex-col gap-y-4 group"
+            >
                 <h2 className="text-2xl sm:text-3xl font-semibold flex flex-row flex-nowrap items-center gap-1">
                     Vizyonumuz
                     <PiBinocularsFill

@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-export default function Model() {
+export default function Model({ selectedDoor }: { selectedDoor: string }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
@@ -18,7 +18,7 @@ export default function Model() {
         const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
         camera.position.z = 3;
 
-        const light = new THREE.AmbientLight(0xffffff, 3); // soft white light
+        const light = new THREE.AmbientLight(0xffffff, 2.5); // soft white light
         light.castShadow = true;
         scene.add(light);
 
@@ -30,6 +30,7 @@ export default function Model() {
             powerPreference: "high-performance",
             stencil: true,
             depth: false,
+            precision: "highp",
         });
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         renderer.setClearColor(0x000000, 0);
@@ -38,25 +39,53 @@ export default function Model() {
         resizeRendererToDisplaySize(renderer);
         containerRef.current.appendChild(renderer.domElement);
 
-        const box = new THREE.BoxGeometry(1.5, 4, 0.05);
+        const doorWidth = 1;
+        const doorHeight = 2;
+        const doorDepth = 0.1;
+
+        const geometry = new THREE.BoxGeometry(
+            doorWidth,
+            doorHeight,
+            doorDepth,
+            32,
+            32,
+            32
+        );
+
+        // Add bevels to the door
+        const bevelSize = 0.05;
+        const positionAttribute = geometry.getAttribute("position");
+        for (let i = 0; i < positionAttribute.count; i++) {
+            const vertex = new THREE.Vector3();
+            vertex.fromBufferAttribute(positionAttribute, i);
+            if (vertex.y === doorHeight / 2) {
+                vertex.x += bevelSize;
+                vertex.z += bevelSize;
+            }
+            if (vertex.y === -doorHeight / 2) {
+                vertex.x -= bevelSize;
+                vertex.z -= bevelSize;
+            }
+        }
 
         const material = new THREE.MeshLambertMaterial({
-            map: new THREE.TextureLoader().load(
-                "/kapilar/primerli/cift-renk/LMD 206-206-206 İTALYAN CEVİZ.png",
-                (t) => {
-                    t.colorSpace = THREE.SRGBColorSpace;
-                    t.wrapS = t.wrapT = THREE.RepeatWrapping;
-                }
-            ),
+            map: new THREE.TextureLoader().load(selectedDoor, (t) => {
+                t.colorSpace = THREE.DisplayP3ColorSpace;
+                // t.wrapS = t.wrapT = THREE.RepeatWrapping;
+                t.premultiplyAlpha = true;
+                t.flipY = true;
+                t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            }),
         });
 
         material.toneMapped = false;
+        material.bumpScale = 0.05;
         material.map!.onUpdate = () => {
             material.needsUpdate = true;
             return material;
         };
 
-        const cube = new THREE.Mesh(box, material);
+        const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
         // Orbit controls
@@ -100,15 +129,12 @@ export default function Model() {
 
         return () => {
             window.removeEventListener("resize", handleResize);
-            const objectToRemove = scene.children.find(
-                (child) => child instanceof THREE.Object3D
-            ) as THREE.Object3D;
-            if (objectToRemove) {
-                scene.remove(objectToRemove);
-            }
+            scene.remove(cube);
+            geometry.dispose();
+            material.dispose();
             renderer.dispose();
         };
-    }, []);
+    }, [selectedDoor]);
 
     return (
         <div
@@ -117,6 +143,7 @@ export default function Model() {
                 width: "100%",
                 height: "100%",
                 position: "relative",
+                // minHeight: "500px",
             }}
         >
             <canvas
