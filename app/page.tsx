@@ -100,7 +100,7 @@ export default function Home() {
                     show={3.5}
                     slide={1}
                     transition={0.5}
-                    className="min-h-[300px] mt-10"
+                    className="min-h-[300px]  mt-10"
                     swiping
                     // responsive
                     leftArrow={
@@ -120,7 +120,7 @@ export default function Home() {
                     />
                     <CarouselImage
                         src="/kapilar/primerli/duz-ahsap/LMD 241 COCO.jpg"
-                        alt="LMD 241 - COCO"
+                        alt="LMD 241 - Coco"
                     />
                     <CarouselImage
                         src="/kapilar/primerli/soft-touch/LMD 708 DOĞAL ANTİK.jpg"

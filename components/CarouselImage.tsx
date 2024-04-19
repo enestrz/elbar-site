@@ -3,7 +3,7 @@ import { ImageCardProps } from "./ImageCard";
 
 export default function CarouselImage({ src, alt }: ImageCardProps) {
     return (
-        <div className="rounded-lg border-2 shadow relative w-full h-full  overflow-hidden">
+        <div className="rounded-lg border-2 shadow relative w-full h-full max-h-[300px]  overflow-hidden">
             <Image
                 src={src}
                 alt={alt}
