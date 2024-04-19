@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { HiCheckCircle } from "react-icons/hi2";
 import { RxArrowRight } from "react-icons/rx";
+import { Carousel } from "@trendyol-js/react-carousel";
+import CarouselImage from "../components/CarouselImage";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
 export default function Home() {
     const year = new Date().getFullYear();
@@ -89,7 +94,129 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="card p-4"></section>
+            <section className="card  sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
+                <h2 className="text-2xl font-bold">Kapılarımız</h2>
+                <Carousel
+                    show={3.5}
+                    slide={1}
+                    transition={0.5}
+                    className="min-h-[300px] mt-10"
+                    swiping
+                    // responsive
+                    leftArrow={
+                        <button className=" h-full ml-2 text-black">
+                            <FaCaretLeft className="size-8" />
+                        </button>
+                    }
+                    rightArrow={
+                        <button className=" h-full mr-2 text-black">
+                            <FaCaretRight className="size-8" />
+                        </button>
+                    }
+                >
+                    <CarouselImage
+                        src="/kapilar/primerli/cift-renk/LMD 206-206-206 İTALYAN CEVİZ.png"
+                        alt="LMD 206-206-206 - İtalyan Ceviz"
+                    />
+                    <CarouselImage
+                        src="/kapilar/primerli/duz-ahsap/LMD 241 COCO.jpg"
+                        alt="LMD 241 - COCO"
+                    />
+                    <CarouselImage
+                        src="/kapilar/primerli/soft-touch/LMD 708 DOĞAL ANTİK.jpg"
+                        alt="LMD 708 - Doğal Antik"
+                    />
+                    <CarouselImage
+                        src="/kapilar/primerli/soft-touch/LMD 732 AVUSTURALYA CEVİZ.jpg"
+                        alt="LMD 732 - Avusturalya Ceviz"
+                    />
+                    <CarouselImage
+                        src="/kapilar/primerli/soft-touch/LMD 724 ASOS.jpg"
+                        alt="LMD 724 - Asos"
+                    />
+                </Carousel>
+
+                <div className="flex flex-row justify-center mt-5">
+                    <Link
+                        href="/urunlerimiz/kapilar"
+                        className="group flex flex-row w-min flex-nowrap gap-1 text-nowrap items-center text-center
+                             bg-black text-white px-5 py-3 mt-5 rounded-md
+                              hover:bg-zinc-800 active:scale-95 transition-all duration-300  "
+                    >
+                        Daha Fazlası İçin
+                        <RxArrowRight
+                            aria-hidden
+                            className="shrink-0 h-6 w-5 inline-block "
+                        />
+                    </Link>
+                </div>
+            </section>
+
+            <section className="card  sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
+                <h2 className="text-2xl font-bold">Kapaklarımız</h2>
+                <Carousel
+                    show={3.5}
+                    slide={1}
+                    transition={0.5}
+                    className="min-h-[300px] mt-10"
+                    swiping
+                    // responsive
+                    leftArrow={
+                        <button className=" h-full ml-2 text-black">
+                            <FaCaretLeft className="size-8" />
+                        </button>
+                    }
+                    rightArrow={
+                        <button className=" h-full mr-2 text-black">
+                            <FaCaretRight className="size-8" />
+                        </button>
+                    }
+                >
+                    <CarouselImage
+                        src="/kapaklar/ahşap/LMD 209 RUSTİK.jpg"
+                        alt="LMD 209 - Rustik"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/düz/LMD 105 PORTAKAL.jpg"
+                        alt="LMD 105 - Portakal"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/düz/LMD 106 FISTIK YEŞİLİ.jpg"
+                        alt="LMD 106 - Fıstık Yeşili"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/düz/LMD 111 LİLA.jpg"
+                        alt="LMD 111 - Lila"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/duz-parlak/LMD 465 TURKUAZ MAVİ.png"
+                        alt="LMD 465 - Turkuaz Mavi"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/duz-parlak/LMD 463 HARDAL SARI.png"
+                        alt="LMD 106 - Fıstık Yeşili"
+                    />
+                    <CarouselImage
+                        src="/kapaklar/metal/LMD 502 NESVA.png"
+                        alt="LMD 502 - Nesva"
+                    />
+                </Carousel>
+
+                <div className="flex flex-row justify-center mt-5">
+                    <Link
+                        href="/urunlerimiz/kapaklar"
+                        className="group flex flex-row w-min flex-nowrap gap-1 text-nowrap items-center text-center
+                             bg-black text-white px-5 py-3 mt-5 rounded-md
+                              hover:bg-zinc-800 active:scale-95 transition-all duration-300  "
+                    >
+                        Daha Fazlası İçin
+                        <RxArrowRight
+                            aria-hidden
+                            className="shrink-0 h-6 w-5 inline-block "
+                        />
+                    </Link>
+                </div>
+            </section>
         </main>
     );
 }
