@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const revalidate = false;
+
 export const metadata: Metadata = {
     title: "Elbar Mobilya",
     description: "Kapı ve kapak membran üretim merkezi",
