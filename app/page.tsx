@@ -4,13 +4,65 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiCheckCircle } from "react-icons/hi2";
 import { RxArrowRight } from "react-icons/rx";
-import { Carousel } from "@trendyol-js/react-carousel";
-import CarouselImage from "../components/CarouselImage";
-import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CarouselGallery from "@/components/CarouselGallery";
 
 export default function Home() {
     const year = new Date().getFullYear();
 
+    const kapilarArray = [
+        {
+            src: "/kapilar/primerli/cift-renk/LMD 206-206-206 İTALYAN CEVİZ.png",
+            alt: "LMD 206-206-206 - İtalyan Ceviz",
+        },
+        {
+            src: "/kapilar/primerli/duz-ahsap/LMD 241 COCO.jpg",
+            alt: "LMD 241 - Coco",
+        },
+        {
+            src: "/kapilar/primerli/soft-touch/LMD 708 DOĞAL ANTİK.jpg",
+            alt: "LMD 708 - Doğal Antik",
+        },
+        {
+            src: "/kapilar/primerli/soft-touch/LMD 732 AVUSTURALYA CEVİZ.jpg",
+            alt: "LMD 732 - Avusturalya Ceviz",
+        },
+        {
+            src: "/kapilar/primerli/soft-touch/LMD 724 ASOS.jpg",
+            alt: "LMD 724 - Asos",
+        },
+    ];
+
+    const kapaklarArray = [
+        {
+            src: "/kapaklar/ahşap/LMD 209 RUSTİK.jpg",
+            alt: "LMD 209 - Rustik",
+        },
+        {
+            src: "/kapaklar/düz/LMD 105 PORTAKAL.jpg",
+            alt: "LMD 105 - Portakal",
+        },
+        {
+            src: "/kapaklar/düz/LMD 106 FISTIK YEŞİLİ.jpg",
+            alt: "LMD 106 - Fıstık Yeşili",
+        },
+        {
+            src: "/kapaklar/düz/LMD 111 LİLA.jpg",
+            alt: "LMD 111 - Lila",
+        },
+        {
+            src: "/kapaklar/duz-parlak/LMD 465 TURKUAZ MAVİ.png",
+            alt: "LMD 465 - Turkuaz Mavi",
+        },
+        {
+            src: "/kapaklar/duz-parlak/LMD 463 HARDAL SARI.png",
+            alt: "LMD 106 - Fıstık Yeşili",
+        },
+        {
+            src: "/kapaklar/metal/LMD 502 NESVA.png",
+            alt: "LMD 502 - Nesva",
+        },
+    ];
     return (
         <main className="">
             <section className="card min-h-screen  flex flex-col bg-[#FAF6F5] shadow-xl  homepage-bg justify-center p-0">
@@ -37,24 +89,52 @@ export default function Home() {
                         />
                     </Link>
                 </div>
-
-                {/* <div className="flex-1 h-full">
-                    <Image
-                        src={"/images/kapi-cover11.jpeg"}
-                        alt="kapak logo"
-                        width={1000}
-                        height={1000}
-                        priority
-                        className="object-cover h-full object-top  "
-                    />
-                </div> */}
             </section>
 
-            <section className="card px-4 sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
+            <div className="w-full mt-10">
+                <h2 className="text-2xl font-bold text-white">
+                    Elbar Mobilya olarak;
+                </h2>
+                <div className="flex flex-row flex-wrap gap-4 mt-5 justify-evenly text-lg">
+                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
+                        <h3 className="text-xl font-bold mb-4">Misyonumuz</h3>
+
+                        <p className="font-medium">
+                            <HiCheckCircle
+                                aria-hidden="true"
+                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                            />
+                            Müşterilerimizin beklentilerini en iyi şekilde
+                            karşılamak ve onlara en kaliteli hizmeti sunmak.
+                        </p>
+                    </section>
+                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
+                        <h3 className="text-xl font-bold mb-4">Vizyonumuz</h3>
+                        <p className="font-medium">
+                            <HiCheckCircle
+                                aria-hidden="true"
+                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                            />
+                            Mobilya sektöründe lider bir marka olmak ve
+                            müşterilerimize en iyi hizmeti sunmak.
+                        </p>
+                    </section>
+                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
+                        <h3 className="text-xl font-bold mb-4">Değerlerimiz</h3>
+                        <p className="font-medium">
+                            <HiCheckCircle
+                                aria-hidden="true"
+                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                            />
+                            Müşteri memnuniyeti, kaliteli hizmet, dürüstlük ve
+                            güven.
+                        </p>
+                    </section>
+                </div>
+            </div>
+
+            <section className="card px-4 sm:px-10 py-14 mt-10 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
                 <div>
-                    <h2 className="text-2xl font-bold">
-                        Elbar Mobilya olarak;
-                    </h2>
                     <ul className="flex flex-col text-xl font-medium gap-4 py-5 px-8 ">
                         <li className="flex items-center justify-start gap-1 ml-3">
                             <HiCheckCircle
@@ -94,47 +174,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="card  sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
+            <section className="card mt-10 sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
                 <h2 className="text-2xl font-bold">Kapılarımız</h2>
-                <Carousel
-                    show={3.5}
-                    slide={1}
-                    transition={0.5}
-                    className="min-h-[300px]  mt-10"
-                    swiping
-                    // responsive
-                    leftArrow={
-                        <button className=" h-full ml-2 text-black">
-                            <FaCaretLeft className="size-8" />
-                        </button>
-                    }
-                    rightArrow={
-                        <button className=" h-full mr-2 text-black">
-                            <FaCaretRight className="size-8" />
-                        </button>
-                    }
-                >
-                    <CarouselImage
-                        src="/kapilar/primerli/cift-renk/LMD 206-206-206 İTALYAN CEVİZ.png"
-                        alt="LMD 206-206-206 - İtalyan Ceviz"
-                    />
-                    <CarouselImage
-                        src="/kapilar/primerli/duz-ahsap/LMD 241 COCO.jpg"
-                        alt="LMD 241 - Coco"
-                    />
-                    <CarouselImage
-                        src="/kapilar/primerli/soft-touch/LMD 708 DOĞAL ANTİK.jpg"
-                        alt="LMD 708 - Doğal Antik"
-                    />
-                    <CarouselImage
-                        src="/kapilar/primerli/soft-touch/LMD 732 AVUSTURALYA CEVİZ.jpg"
-                        alt="LMD 732 - Avusturalya Ceviz"
-                    />
-                    <CarouselImage
-                        src="/kapilar/primerli/soft-touch/LMD 724 ASOS.jpg"
-                        alt="LMD 724 - Asos"
-                    />
-                </Carousel>
+
+                <CarouselGallery images={kapilarArray} />
 
                 <div className="flex flex-row justify-center mt-5">
                     <Link
@@ -152,55 +195,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="card  sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
+            <section className="card mt-10 sm:px-10 py-14 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
                 <h2 className="text-2xl font-bold">Kapaklarımız</h2>
-                <Carousel
-                    show={3.5}
-                    slide={1}
-                    transition={0.5}
-                    className="min-h-[300px] mt-10"
-                    swiping
-                    // responsive
-                    leftArrow={
-                        <button className=" h-full ml-2 text-black">
-                            <FaCaretLeft className="size-8" />
-                        </button>
-                    }
-                    rightArrow={
-                        <button className=" h-full mr-2 text-black">
-                            <FaCaretRight className="size-8" />
-                        </button>
-                    }
-                >
-                    <CarouselImage
-                        src="/kapaklar/ahşap/LMD 209 RUSTİK.jpg"
-                        alt="LMD 209 - Rustik"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/düz/LMD 105 PORTAKAL.jpg"
-                        alt="LMD 105 - Portakal"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/düz/LMD 106 FISTIK YEŞİLİ.jpg"
-                        alt="LMD 106 - Fıstık Yeşili"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/düz/LMD 111 LİLA.jpg"
-                        alt="LMD 111 - Lila"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/duz-parlak/LMD 465 TURKUAZ MAVİ.png"
-                        alt="LMD 465 - Turkuaz Mavi"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/duz-parlak/LMD 463 HARDAL SARI.png"
-                        alt="LMD 106 - Fıstık Yeşili"
-                    />
-                    <CarouselImage
-                        src="/kapaklar/metal/LMD 502 NESVA.png"
-                        alt="LMD 502 - Nesva"
-                    />
-                </Carousel>
+
+                <CarouselGallery images={kapaklarArray} />
 
                 <div className="flex flex-row justify-center mt-5">
                     <Link

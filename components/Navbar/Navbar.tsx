@@ -9,6 +9,12 @@ import { useCycle, motion } from "framer-motion";
 import Sidebar from "./Sidebar";
 import { useWindowWidth } from "@react-hook/window-size";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { Comfortaa } from "next/font/google";
+
+const comfortaa = Comfortaa({
+    subsets: ["latin"],
+});
 
 const Navbar = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
@@ -27,7 +33,13 @@ const Navbar = () => {
             animate={isOpen ? "open" : "closed"}
             className=" relative  text-[#FDFDFFEF] h-[70px] sm:mx-auto w-full sm:max-w-screen-xl flex flex-row p-4 justify-between items-center sm:items-baseline border-b border-white/30 shadow-sm shadow-current/50"
         >
-            <h2 className="font-semibold text-xl sm:text-3xl">Elbar Mobilya</h2>
+            <Link
+                href="/"
+                className={`${comfortaa.className} font-semibold text-xl sm:text-3xl`}
+            >
+                <span>Elbar</span>{" "}
+                <span className="text-orange-400">Mobilya</span>
+            </Link>
 
             <HamburgerMenu toggle={toggleOpen} />
 

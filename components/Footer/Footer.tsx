@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MdLocalPhone, MdPinDrop } from "react-icons/md";
 
 export default function Footer() {
     return (
@@ -30,9 +31,17 @@ export default function Footer() {
                     </h5>
                     <ul>
                         <li className="mt-2">
+                            <MdLocalPhone
+                                aria-hidden="true"
+                                className="size-5 flex-shrink-0 text-white inline mr-1"
+                            />{" "}
                             <strong>Telefon:</strong> (0226) 825 40 35
                         </li>
                         <li className="text-wrap mt-2">
+                            <MdPinDrop
+                                aria-hidden="true"
+                                className="size-5 flex-shrink-0 text-white inline mr-2"
+                            />
                             <strong>Adres:</strong> Kirazlı Sanayi Sitesi
                             Marangozlar Bölümü 1 Yol D:34, Yalova Merkez, Yalova
                         </li>
