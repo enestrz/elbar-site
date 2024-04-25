@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "primereact/resources/themes/mdc-dark-indigo/theme.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { PrimeReactProvider } from "primereact/api";
+import { ScrollTop } from "primereact/scrolltop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +29,15 @@ export default function RootLayout({
             <body
                 className={`${inter.className} min-h-svh flex flex-col flex-nowrap antialiased`}
             >
-                <Navbar />
-                {children}
-                <Footer />
+                <PrimeReactProvider>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    <ScrollTop
+                        target="window"
+                        className="bg-white"
+                    />
+                </PrimeReactProvider>
             </body>
         </html>
     );

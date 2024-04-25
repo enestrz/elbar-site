@@ -71,7 +71,7 @@ export default function AddressSection() {
                             <strong className="text-background">
                                 Telefon:{" "}
                             </strong>{" "}
-                            +90 123 456 78 90
+                            +90 226 825 40 35
                         </p>
                     </li>
 
@@ -84,7 +84,8 @@ export default function AddressSection() {
                             <strong className="text-background">
                                 Açık Adres:{" "}
                             </strong>{" "}
-                            1234 Sokak No: 56, 12345 Şehir, Ülke
+                            Kirazlı Sanayi Sitesi Marangozlar Bölümü 1 Yol D:34,
+                            Yalova Merkez, Yalova
                         </p>
                     </li>
                     <GoogleMap />

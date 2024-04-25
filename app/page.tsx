@@ -6,6 +6,7 @@ import { HiCheckCircle } from "react-icons/hi2";
 import { RxArrowRight } from "react-icons/rx";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CarouselGallery from "@/components/CarouselGallery";
+import ContactSection from "./iletisim/ContactSection";
 
 export default function Home() {
     const year = new Date().getFullYear();
@@ -65,7 +66,7 @@ export default function Home() {
     ];
     return (
         <main className="">
-            <section className="card min-h-screen  flex flex-col bg-[#FAF6F5] shadow-xl  homepage-bg justify-center p-0">
+            <section className="card min-h-[700px]  flex flex-col bg-[#FAF6F5] shadow-xl  homepage-bg justify-center p-0">
                 <div className="flex flex-1 w-full h-full flex-col  items-center sm:backdrop-blur-sm sm:backdrop-brightness-125 rounded-3xl text-black ">
                     <Image
                         src="/images/logo-transparent.png"
@@ -91,85 +92,91 @@ export default function Home() {
                 </div>
             </section>
 
-            <div className="w-full mt-10">
-                <h2 className="text-2xl font-bold text-white">
-                    Elbar Mobilya olarak;
+            <section className="w-full mt-10 card p-0 bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
+                <h2 className="text-3xl font-bold p-5  text-black shadow-2xl underline w-full underline-offset-8">
+                    Elbar Mobilya olarak
                 </h2>
-                <div className="flex flex-row flex-wrap gap-4 mt-5 justify-evenly text-lg">
-                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
-                        <h3 className="text-xl font-bold mb-4">Misyonumuz</h3>
+                <div className="p-4 w-full h-full bg-zinc-900/5">
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-10 items-center sm:justify-evenly text-lg">
+                        <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-zinc-100 backdrop-blur-md shadow-xl">
+                            <h3 className="text-xl font-bold mb-4">
+                                Misyonumuz
+                            </h3>
 
-                        <p className="font-medium">
-                            <HiCheckCircle
-                                aria-hidden="true"
-                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
-                            />
-                            Müşterilerimizin beklentilerini en iyi şekilde
-                            karşılamak ve onlara en kaliteli hizmeti sunmak.
+                            <p className="font-medium">
+                                <HiCheckCircle
+                                    aria-hidden="true"
+                                    className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                                />
+                                Müşterilerimizin beklentilerini en iyi şekilde
+                                karşılamak ve onlara en kaliteli hizmeti sunmak.
+                            </p>
+                        </section>
+                        <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-zinc-100 backdrop-blur-md shadow-xl">
+                            <h3 className="text-xl font-bold mb-4">
+                                Vizyonumuz
+                            </h3>
+                            <p className="font-medium">
+                                <HiCheckCircle
+                                    aria-hidden="true"
+                                    className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                                />
+                                Mobilya sektöründe lider bir marka olmak ve
+                                müşterilerimize en iyi hizmeti sunmak.
+                            </p>
+                        </section>
+                        <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-zinc-100 backdrop-blur-md shadow-xl">
+                            <h3 className="text-xl font-bold mb-4">
+                                Değerlerimiz
+                            </h3>
+                            <p className="font-medium">
+                                <HiCheckCircle
+                                    aria-hidden="true"
+                                    className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
+                                />
+                                Müşteri memnuniyeti, kaliteli hizmet, dürüstlük
+                                ve güven.
+                            </p>
+                        </section>
+                    </div>
+
+                    <div className="mt-14 flex flex-col items-center">
+                        <ul className="flex flex-col text-xl font-medium gap-4 py-5 px-8 ">
+                            <li className="flex items-center justify-start gap-1 ml-3">
+                                <HiCheckCircle
+                                    aria-hidden="true"
+                                    className="text-blue-600 size-5 sm:size-6 flex-shrink-0"
+                                />
+                                Ayda 25.000 m2 membran kapak, 200 adet kapı.
+                            </li>
+                            <li className="flex items-center justify-start gap-1 ml-3">
+                                <HiCheckCircle
+                                    aria-hidden="true"
+                                    className="text-blue-600 size-5 sm:size-6 flex-shrink-0"
+                                />
+                                Yılda 300.000 m2 membran kapak, 2400 adet kapı.
+                            </li>
+                        </ul>
+
+                        <p className="font-bold text-xl">
+                            Ve {year - 1998} yıllık tecrübemiz ile sizlere
+                            güvenilir hizmet sunuyoruz.
                         </p>
-                    </section>
-                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
-                        <h3 className="text-xl font-bold mb-4">Vizyonumuz</h3>
-                        <p className="font-medium">
-                            <HiCheckCircle
-                                aria-hidden="true"
-                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
-                            />
-                            Mobilya sektöründe lider bir marka olmak ve
-                            müşterilerimize en iyi hizmeti sunmak.
-                        </p>
-                    </section>
-                    <section className="card p-4 flex-1 min-h-[300px] max-w-[300px] bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF]">
-                        <h3 className="text-xl font-bold mb-4">Değerlerimiz</h3>
-                        <p className="font-medium">
-                            <HiCheckCircle
-                                aria-hidden="true"
-                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0 inline-block mr-2"
-                            />
-                            Müşteri memnuniyeti, kaliteli hizmet, dürüstlük ve
-                            güven.
-                        </p>
-                    </section>
-                </div>
-            </div>
 
-            <section className="card px-4 sm:px-10 py-14 mt-10 flex bg-gradient-to-r from-[#D7E1EC] to-[#FFFFFF] flex-col items-center shadow-xl drop-shadow-md  bg-white/95 text-black">
-                <div>
-                    <ul className="flex flex-col text-xl font-medium gap-4 py-5 px-8 ">
-                        <li className="flex items-center justify-start gap-1 ml-3">
-                            <HiCheckCircle
-                                aria-hidden="true"
-                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0"
-                            />
-                            Ayda 25.000 m2 membran kapak, 200 adet kapı.
-                        </li>
-                        <li className="flex items-center justify-start gap-1 ml-3">
-                            <HiCheckCircle
-                                aria-hidden="true"
-                                className="text-blue-600 size-5 sm:size-6 flex-shrink-0"
-                            />
-                            Yılda 300.000 m2 membran kapak, 2400 adet kapı.
-                        </li>
-                    </ul>
-
-                    <p className="font-bold text-xl">
-                        Ve {year - 1998} yıllık tecrübemiz ile sizlere güvenilir
-                        hizmet sunuyoruz.
-                    </p>
-
-                    <div className="flex flex-row justify-center mt-5">
-                        <Link
-                            href="/kurumsal"
-                            className="group flex flex-row w-min flex-nowrap gap-1 text-nowrap items-center text-center
+                        <div className="flex flex-row justify-center mt-5 mb-10">
+                            <Link
+                                href="/kurumsal"
+                                className="group flex flex-row w-min flex-nowrap gap-1 text-nowrap items-center text-center
                              bg-black text-white px-5 py-3 mt-5 rounded-md
                               hover:bg-zinc-800 active:scale-95 transition-all duration-300  "
-                        >
-                            Hakkımızda
-                            <RxArrowRight
-                                aria-hidden
-                                className="shrink-0 h-6 w-5 inline-block "
-                            />
-                        </Link>
+                            >
+                                Hakkımızda
+                                <RxArrowRight
+                                    aria-hidden
+                                    className="shrink-0 h-6 w-5 inline-block "
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -215,6 +222,8 @@ export default function Home() {
                     </Link>
                 </div>
             </section>
+
+            <ContactSection />
         </main>
     );
 }

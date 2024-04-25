@@ -1,13 +1,44 @@
 "use client";
 
-export default function ContactSection() {
-    function handleSubmit(formData: FormData) {
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const subject = formData.get("subject");
-        const message = formData.get("message");
-        console.log(name, email, subject, message);
+import { Toast } from "primereact/toast";
+import { useRef, useState } from "react";
 
+export default function ContactSection() {
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+    const toast = useRef(null);
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        if (!form.name || !form.email || !form.subject || !form.message) {
+            (toast.current as any)?.show({
+                severity: "error",
+                summary: "Hata",
+                detail: "Lütfen tüm alanları doldurunuz.",
+                life: 3000,
+            });
+
+            return "";
+        }
+        (toast.current as any)?.show({
+            severity: "success",
+            summary: "Mesajınız başarıyla gönderildi.",
+            detail: "En kısa sürede size geri dönüş yapılacaktır.",
+            life: 3000,
+        });
+
+        setForm({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        });
         return "";
     }
 
@@ -16,6 +47,7 @@ export default function ContactSection() {
             id="iletisim-formu"
             className="card p-4 md:p-10 mt-12 mb-12"
         >
+            <Toast ref={toast} />
             <div className="leading-relaxed mb-8">
                 <h3 className="text-3xl sm:text-4xl font-normal mb-2">
                     Bizimle İletişime Geçin
@@ -28,7 +60,7 @@ export default function ContactSection() {
             </div>
 
             <form
-                action={handleSubmit}
+                onSubmit={(e) => handleSubmit(e)}
                 className=" flex flex-col gap-y-10"
             >
                 <fieldset className="flex flex-col items-start gap-1">
@@ -42,6 +74,13 @@ export default function ContactSection() {
                         type="text"
                         id="name"
                         name="name"
+                        value={form.name}
+                        onChange={(e) => {
+                            setForm((prev) => ({
+                                ...prev,
+                                name: e.target.value,
+                            }));
+                        }}
                         placeholder="Lütfen isim ve soyisim giriniz..."
                         className="form-input-white w-full"
                     />
@@ -58,6 +97,13 @@ export default function ContactSection() {
                         type="email"
                         id="email"
                         name="email"
+                        value={form.email}
+                        onChange={(e) => {
+                            setForm((prev) => ({
+                                ...prev,
+                                email: e.target.value,
+                            }));
+                        }}
                         placeholder="Email adresinizi girin... (örn: example@gmail.com)"
                         className="form-input-white w-full"
                     />
@@ -74,6 +120,13 @@ export default function ContactSection() {
                         type="text"
                         id="subject"
                         name="subject"
+                        value={form.subject}
+                        onChange={(e) => {
+                            setForm((prev) => ({
+                                ...prev,
+                                subject: e.target.value,
+                            }));
+                        }}
                         placeholder="Konu başlığını girin..."
                         className="form-input-white w-full"
                     />
@@ -89,6 +142,13 @@ export default function ContactSection() {
                     <textarea
                         id="message"
                         name="message"
+                        value={form.message}
+                        onChange={(e) => {
+                            setForm((prev) => ({
+                                ...prev,
+                                message: e.target.value,
+                            }));
+                        }}
                         placeholder="Bize iletmek istediğiniz mesajı buraya yazabilirsiniz..."
                         className="form-input-white h-32 resize-none indent-2  "
                     ></textarea>

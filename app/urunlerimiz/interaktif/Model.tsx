@@ -1,11 +1,12 @@
 "use client";
 
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default function Model({ selectedDoor }: { selectedDoor: string }) {
+    const [isLoaded, setIsLoaded] = useState(false);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
@@ -142,6 +143,7 @@ export default function Model({ selectedDoor }: { selectedDoor: string }) {
             style={{
                 width: "100%",
                 height: "100%",
+                // maxHeight: "500px",
                 position: "relative",
                 // minHeight: "500px",
             }}
